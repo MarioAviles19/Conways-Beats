@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
+    <script src="https://kit.fontawesome.com/88249cf939.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conway's Game of Beats</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container clamp-medium">
+        <label id="themeSelect" class="select">
+          <div class="flex-between selectOption" >
+            <div class="flex-between currentOption">
+              <div class="colors flex-between">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="selectMenu">
+
+            <div class="selectOption schwarzschild" data-value="default">
+              Schwarzschild
+              <div class="colors">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+            
+            <div class="selectOption martinaise" data-value="martinaise">
+              Martinaise
+              <div class="colors">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+            <div class="selectOption centipede" data-value="centipede">
+              Centipede
+              <div class="colors">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+            <div class="selectOption citypop" data-value="citypop">
+              City-Pop
+              <div class="colors">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+            <div class="selectOption leafs" data-value="leafs">
+              Leafs
+              <div class="colors">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+            <div class="selectOption birdie" data-value="birdie">
+              Birdie
+              <div class="colors">
+                <div class="example1 colorExample"></div>
+                <div class="example2 colorExample"></div>
+                <div class="example3 colorExample"></div>
+              </div>
+            </div>
+          </div>
+        </label>
+        <h2>sqnce</h2>
+        <div class="flex-between controls">
+          <div class="center tempoControls">
+            <button class="tempoArrow" id="incDown"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="tempoInputContainer"><input class="tempoInput" type="number" name="" id="bpm"></div>
+            <span class="tempoUnit">BPM</span>
+            <button class="tempoArrow" id="incUp"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="center">
+            <button class="control  center" id="play"><i class="fa-play fa-solid"></i></button>
+          </div>
+        </div>
+        <div class="tiles">
+          <div class="markings">
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking quarter"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking eighth"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking quarter"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking eighth"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking quarter"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking eighth"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking quarter"></div></div>
+            <div aria-hidden="true" class="meterContainer center"><div class="meterMarking eighth"></div></div>
+          </div>
+          <div class="row">
+            <div class="drumIcon"><i>Hh</i></div>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+          </div>
+          <div class="row">
+            <div class="drumIcon"><i>Sn</i></div>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+          </div>
+          <div class="row">
+            <div class="drumIcon"><i>Ba</i></div>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+          </div>
+          <div class="row">
+            <div class="drumIcon"><i>T1</i></div>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+          </div>
+          <div class="row">
+            <div class="drumIcon"><i>T2</i></div>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+            <button type="button" class="square tile"></button>
+          </div>
+        </div>
+        <button class="hidden">Settings <i aria-hidden="true" class="fa-solid fa-sliders"></i></button>
+      </div>
+
+      <div class="container clamp-large">
+        <h2>How To Use</h2>
+        <p>
+          This is a drum sequencer that iterates through Conway's game of life on each repetition of the measure.
+          To use, simply select some cells and press play. You can also <span class="highlight">lock</span> by using right click, 
+          or by pressing and holding on mobile. This prevents the cell's state from changing between generations. 
+        </p>
+
+        <h1>Conway's Game of Life</h1>
+        <p>Conway's Game of Life is a cellular automata game that consists of three rules</p>
+        <ol>
+          <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
+          <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+          <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+          <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+        </ol>
+        <p>From these rules, a wide variety of behavior can be produced from different starting positions. Although this 5x8 grid limits the posibilities greatly, are still many interesting patterns that emerge from various starting positions 
+          <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Read More Here</a></p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
